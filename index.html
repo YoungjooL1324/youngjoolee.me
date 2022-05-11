@@ -10,63 +10,34 @@
         <title>Youngjoo's Website</title>
     </head>
 
-    <body class = "lightblue-background">
+    <body>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> <!-- link to the google fonts-->
         <!-- impacts all the tags listed, . means it is a class and means it can apply to any element w/ specific class, # means id and specific to those tagged. 
             id has higehr priority than classes. ONLY ONE ID per element-->
-        <style> 
+        <nav>
+            <div class = "header">
+                <form action = "https://journeys.dartmouth.edu/youngjoolee25/" >
+                    <button class = "tablink" type = "submit">
+                        <h1>About Me</h1>
+                    </button>
+                </form>
 
-            .red-text {color: red;} 
+            </div>
 
-            .lightblue-background {background-color: lightblue;}
-
-            .image {
-                width: 150;
-                border-radius: 20px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .blue-box {
-                background-color: cornflowerblue;
-                color:bisque;
-                padding: 20px 300px 20px 300px;
-                text-align: center;
-                margin: 50px;
-               
-            }
-
-            p { 
-                font-size: 20px;
-                font-family: monospace;
-            }
-
-            .sub-header {
-                font-family: Lobster, monospace;
-                text-align: center;
-                
-            }
-         </style>
-        
-
-        <hr/>  <!-- inserts a horizontal line on screen-->
-        <section class = "header" style = "color: cadetblue; background-color: cornsilk;">
-            <nav>
-                <a href = "portfolio.html">Portfolio</a>
-            </nav>
-        </section >
-
+        </nav>
         <main>
-            <h1 class = "blue-box">About Me</h1>
-            <p> <!-- block element: take up entire width of the page-->
-                <big>I am a Dartmouth c/o '25 majoring in Computer Science! </big><br/>
-                Outside of the classroom, and when I'm not coding I'm lucky enough to be on the rugby team
-            </p>
-  
+            <div>
+                <h1 class = "blue-box">Who Am I?</h1>
+                <p style="padding: 10px; border: 2px solid rgb(25, 0, 255);"> <!-- block element: take up entire width of the page-->
+                  <big>I am a Dartmouth c/o '25 majoring in Computer Science from Seattle, WA!<br/>
+                    Outside of the classroom, and when I'm not coding I'm lucky enough to be on the rugby team<br/>
+                    Click on my journey's page to learn more about me!</big> </p>
+            </div>
 
-            <img  class = "image"  width = "150" src = "headShotHTML.jpg" /><br/>
+            <img  class = "image"  width = "150" src = "headShotHTML.jpg" /></br>
 
             <h2 class = "sub-header"><bold>My Favorite Video:</bold> </h2></br>
 
@@ -74,13 +45,7 @@
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
             encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </main>
-
-        <footer>
-            <a href="https://journeys.dartmouth.edu/youngjoolee25/" target = "_blank">My journeys page</a> <!-- <a> element is in-line, i.e. elements only take up as much space as they need-->
-            
-   
-        <h2>My style and colors</h2>
-    
     </body>
+
 </html> 
  <!-- html tags allow a search engine like google to figure out sections of website and make it more readable for urself when debugging-->

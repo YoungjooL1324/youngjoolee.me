@@ -1,8 +1,82 @@
+:root{
+    --bar-height: 72px;
+    --color-primary:#009579;
+    -color-primary-light: #0affd2;
+}
+
+
+body{
+    background-image: linear-gradient(#FFFFFF, #009579);
+
+}
+
 .header{
-    min-height: 100vh;
+    min-height: 10vh;
     min-width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7), url(images/coreyFord.jpeg.crdownload));
+    
     background-position: center;
     background-size: cover;
     position: relative;
 }
+
+.footer{
+    height: 100vh;
+    background:  linear-gradient(to bottom right, var(--color-primary), var(--color-primary-light));
+    align-items: center;
+    padding-bottom: var(--bar-height);
+
+}
+.tablink {
+    background-color: darkslateblue;
+    left: 50%;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 16px;
+    width: 20%;
+    text-align: center;
+    border-radius: 20px;
+
+  }
+
+
+.lightblue-background {background-color: lightblue;}
+
+.image {
+    width: 150;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    
+}
+
+
+.blue-box {
+    background-color: cornflowerblue;
+    color:bisque;
+    padding: 20px 300px 20px 300px;
+    text-align: center;
+    margin: 50px;
+    
+}
+
+
+
+p { 
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.sub-header {
+    font-family: Lobster, monospace;
+    text-align: center;
+    
+}
+
+    
+  
+  /* Set default styles for tab content */
