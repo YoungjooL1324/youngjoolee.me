@@ -2,16 +2,85 @@
 
 <html>
     <head>
-        <title>youngjoolee.me</title>
+        <meta charset = "UTF-8">
+        <meta name = "description" content = "This is a website about me!">
+        <meta name = "author" content = "Youngjoo Lee">
+        <meta name = "keywords" content = "Personal Website, HTML">
+        <meta name = "viewport" content = "width = device_width, initial_scale = 1.0">
+        <title>Youngjoo's Website</title>
     </head>
 
-    <body>
-        <h1>Youngjoo Lee </h1>
-        <p>
-            <a href="https://journeys.dartmouth.edu/youngjoolee25/">My journeys page</a>
+    <body class = "lightblue-background">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> <!-- link to the google fonts-->
+        <!-- impacts all the tags listed, . means it is a class and means it can apply to any element w/ specific class, # means id and specific to those tagged. 
+            id has higehr priority than classes. ONLY ONE ID per element-->
+        <style> 
 
-            <p>This is my webpage</p>
-        </p>
+            .red-text {color: red;} 
+
+            .lightblue-background {background-color: lightblue;}
+
+            .image {
+                width: 150;
+                border-radius: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .blue-box {
+                background-color: cornflowerblue;
+                color:bisque;
+                padding: 20px 300px 20px 300px;
+                text-align: center;
+                margin: 50px;
+               
+            }
+
+            p { 
+                font-size: 20px;
+                font-family: monospace;
+            }
+
+            .sub-header {
+                font-family: Lobster, monospace;
+                text-align: center;
+                
+            }
+         </style>
         
+
+        <hr/>  <!-- inserts a horizontal line on screen-->
+        <section class = "header" style = "color: cadetblue; background-color: cornsilk;">
+            <nav>
+                <a href = "portfolio.html">Portfolio</a>
+            </nav>
+        </section >
+
+        <main>
+            <h1 class = "blue-box">About Me</h1>
+            <p> <!-- block element: take up entire width of the page-->
+                <big>I am a Dartmouth c/o '25 majoring in Computer Science! </big><br/>
+                Outside of the classroom, and when I'm not coding I'm lucky enough to be on the rugby team
+            </p>
+  
+
+            <img  class = "image"  width = "150" src = "headShotHTML.jpg" /><br/>
+
+            <h2 class = "sub-header"><bold>My Favorite Video:</bold> </h2></br>
+
+            <iframe width="500" height="300" src="https://www.youtube.com/embed/6-my4gwkuFQ" title="YouTube video player" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </main>
+
+        <footer>
+            <a href="https://journeys.dartmouth.edu/youngjoolee25/" target = "_blank">My journeys page</a> <!-- <a> element is in-line, i.e. elements only take up as much space as they need-->
+            
+   
+        <h2>My style and colors</h2>
+    
     </body>
-</html>
+</html> 
+ <!-- html tags allow a search engine like google to figure out sections of website and make it more readable for urself when debugging-->
