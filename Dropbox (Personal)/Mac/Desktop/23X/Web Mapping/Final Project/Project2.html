@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title> Hello Campus!</title>
+    <link rel ="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  
+    <style>
+      #map { height: 400px; width: 700px; }
+      html, body { height: 100%; margin: 0; padding: 0; }
+    </style>
+
+    <script src="WAHighSchoolData.geojson">
+    </script>
+    <script src="Population_Living_in_Poverty.geojson">
+    </script>
+  
+    <script>
+      var schoolLayer;
+      var schoolVisible = true;
+      var coastVisible = true;
+      var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+                                          { maxZoom: 19, 
+                                              attribution: '&copy; <a href="http:/www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.osm.org">HOT OSM</a>'
+                                          });
+        
+      // function riverSymbology(feature) {
+      //   var length = feature.properties.LENGTH;
+      //   var riverWidth = 2;
+      //   var riverColor = "#00008B";
+
+      //   if (length > 500.0) {
+      //     riverColor = "#777777"; lineWidth = 4;
+      //   }
+      //   if (length > 1000) {
+      //     riverColor = "#e9a3c9"; lineWidth = 6;
+      //   }
+
+      //   return {
+      //     color: riverColor,
+      //     weight: riverWidth,
+      //     opacity: 1
+      //   };
+      // }
+      function initialize() {
+          var map = L.map('map', { 
+                      center: [ 47.68, -122.201 ],
+                      zoom: 15,
+                      layers: [OpenStreetMap_HOT]
+              });
+          var response = $.ajax({
+            url: "WAHighSchoolData.geojson",
+            dataType: "json",
+            success: console.log("High school data loaded!"),
+            error: function(xhr){
+              alert(xhr.statusText);
+            }
+          });
+
+        $.when(response).done(function() {
+              schoolLayer = L.geoJson(response.responseJSON,
+                            { style: schoolSymbology,
+                            onEachFeature: function(feature, layer) {
+                layer.bindPopup("<b> Percent Without Diploma: " + feature.properties.Percent_Without_Diploma + "<\b><br>" + "Number Without Diploma: " + 
+                                feature.properties.Num_Without_Diploma);
+              }
+              }).addTo(map);
+              $("#toggleSchools").show();
+              $("#toggleSchools").click(function() {
+                    if(schoolVisible) {
+                      schoolVisible = false;
+                      schoolLayer.removeFrom(map);
+                    }else{
+                      schoolVisible = true;
+                      schoolLayer.addTo(map);
+                    }
+              }) 
+        })
+
+  
+  }  
+          
+    </script>
+  </head>
+  <body onload="initialize()"> 
+    <h1>Hello Campus!</h1>
+    <div id = "map"></div>
+    <div id = "button">
+      <button id="toggleSchools" hidden> Toggle the layers.</button>
+    </div>
+  </body>
+</html>
